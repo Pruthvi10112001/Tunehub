@@ -1,0 +1,41 @@
+@charset "ISO-8859-1";
+iframe{
+		height:100px;
+		width:500px;
+	}
+	body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+audio {
+    width: 100%;
+}
+audio::-webkit-media-controls-panel {
+    background-color: grey;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button {
+    color: #fff;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #333;
+}

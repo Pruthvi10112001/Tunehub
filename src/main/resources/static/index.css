@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+body{
+	font-family: Arial,sans-serif;
+    text-align: center;
+    background-image: url("indexBackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h1{
+	
+	padding:0px;
+}
+a{
+	display:block;
+	text-align: center;
+	font-weight: bold;
+}
+a:hover{
+	color: #4d004d;
+}
+.div{
+	margin: 100px 500px;
+    padding: 100px;
+    padding-left:100px;
+    padding-right:100px;
+ 	border: 2px thick black;
+ 	box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    width: 200px;
+	
+	background: rgba(255, 255, 255, 0.01);
+}
