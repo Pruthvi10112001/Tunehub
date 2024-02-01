@@ -1,9 +1,11 @@
 @charset "ISO-8859-1";
-iframe{
-		height:100px;
-		width:500px;
-	}
-	body {
+
+iframe {
+    height: 100px;
+    width: 500px;
+}
+
+body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
@@ -20,12 +22,26 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #3498db; /* Header background color */
+    color: #fff; /* Header text color */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray for odd rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e0e0e0; /* Light gray for even rows */
+}
+
+tbody tr:hover {
+    background-color: #d4e3fc; /* Light blue on hover */
 }
 
 audio {
     width: 100%;
 }
+
 audio::-webkit-media-controls-panel {
     background-color: grey;
 }

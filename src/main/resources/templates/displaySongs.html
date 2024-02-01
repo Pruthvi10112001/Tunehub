@@ -4,8 +4,49 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" th:href="@{/displaySongs.css}" type="text/css">
+<style type="text/css">
+/* CSS for search bar */
+div {
+    margin: 20px 0;
+    text-align: center;
+}
+
+label {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333; /* Text color */
+}
+
+input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+</style>
 </head>
 <body>
+	<div>
+		<label for="songSearch">Search Song:</label> <input type="text"
+			id="songSearch" placeholder="Enter song name...">
+		<button onclick="searchSongs()">Search</button>
+	</div>
+
 	<table border>
 		<thead>
 			<tr>
@@ -17,17 +58,38 @@
 		</thead>
 		<tbody>
 			<tr th:each="song:${songs}">
-				<td th:text="${song.name}">        </td>
-				<td th:text="${song.artist}">       </td>
-				<td th:text="${song.genre}">       </td>
-				
-				<td>
-					<audio controls>
+				<td th:text="${song.name}"></td>
+				<td th:text="${song.artist}"></td>
+				<td th:text="${song.genre}"></td>
+
+				<td><audio controls>
 						<source th:src="${song.link}" type="audio/mpeg">
-					</audio>
-				</td>
+					</audio></td>
 			</tr>
 		</tbody>
 	</table>
+	 <script>
+        function searchSongs() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("songSearch");
+            filter = input.value.toUpperCase();
+            table = document.querySelector("table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0]; // Assuming the song name is in the first column
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
 </body>
 </html>
